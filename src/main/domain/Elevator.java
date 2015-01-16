@@ -10,8 +10,8 @@ public class Elevator {
     public static String DOOR_STATUS_OPENED = "OPD";
     public static String DOOR_STATUS_CLOSING = "CLI";
     public static String DOOR_STATUS_CLOSED = "CLD";
-    public static long DOOR_SPEED = 2000;
-    public static long DOOR_WAIT_SPEED = 3000;
+    public static long DOOR_SPEED = 1500;
+    public static long DOOR_WAIT_SPEED = 2500;
 
     int srcFloorNumber;
     int destFloorNumber;

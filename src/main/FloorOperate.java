@@ -13,7 +13,10 @@ public class FloorOperate {
         boolean floorUpBtn = floor.isUpBtn();
 
         System.out.println("엘리베이터는 현재 " + elevatorFloorNumber + "층에 있습니다");
+        Thread.sleep(1500);
         System.out.println(reqFloorNumber + "층에서 올라가는 버튼을 눌렀습니다");
+        Thread.sleep(1500);
+
         floor.setNumber(reqFloorNumber);
         floor.setUpBtn(floorUpBtn);
 

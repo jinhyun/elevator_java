@@ -13,6 +13,10 @@ public class ElevatorOperate {
             System.out.println("엘리베이터: " + i + "층");
             et.run(ELEVATOR_SPEED);
         }
+
+        openDoor();
+        waitDoor();
+        closeDoor();
     }
 
     // 엘리베이터가 내려간다.
@@ -23,6 +27,10 @@ public class ElevatorOperate {
             System.out.println("엘리베이터: " + i + "층");
             et.run(ELEVATOR_SPEED);
         }
+
+        openDoor();
+        waitDoor();
+        closeDoor();
     }
 
     public void goUpDown(Elevator elevator) throws Exception {
