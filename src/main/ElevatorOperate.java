@@ -1,5 +1,8 @@
 package main;
 
+import main.domain.Elevator;
+import main.domain.Floor;
+
 public class ElevatorOperate {
     public void goUp(int srcFloor, int destFloor) throws Exception {
         ElevatorThread et = new ElevatorThread();
@@ -19,12 +22,15 @@ public class ElevatorOperate {
         }
     }
 
-    public void goUpDown(int srcFloor, int destFloor) throws Exception {
-        if (srcFloor < destFloor){
-            goUp(srcFloor, destFloor);
+    public void goUpDown(Elevator elevator) throws Exception {
+        int srcFloorNumber = elevator.getSrcFloorNumber();
+        int destFloorNumber = elevator.getDestFloorNumber();
 
-        } else if (srcFloor > destFloor){
-            goDown(srcFloor, destFloor);
+        if (srcFloorNumber < destFloorNumber){
+            goUp(srcFloorNumber, destFloorNumber);
+
+        } else if (srcFloorNumber > destFloorNumber){
+            goDown(srcFloorNumber, destFloorNumber);
 
         } else {
             System.out.println("엘리베이터 위치와 동일합니다.");
