@@ -7,11 +7,8 @@ import main.domain.Floor;
 import org.junit.Test;
 
 public class TestElevatorOperate {
-    int peoplePushFloor;
-    int elevatorSrcFloor;
-
     @Test
-    // 엘리베이터가 1층에서 5층으로 올라간다
+    // 엘리베이터가 올라간다. (1층에서 5층으로)
     public void testGoUp() throws Exception {
         Elevator elevator = new Elevator();
         elevator.setSrcFloorNumber(1);
@@ -22,7 +19,7 @@ public class TestElevatorOperate {
     }
 
     @Test
-    // 엘리베이터가 5층에서 1층으로 내려간다
+    // 엘리베이터가 내려간다. (5층에서 1층으로)
     public void testGoDown() throws Exception {
         Elevator elevator = new Elevator();
         elevator.setSrcFloorNumber(5);
@@ -32,8 +29,7 @@ public class TestElevatorOperate {
         elevatorOperate.goUpDown(elevator);
     }
 
-    // (5층에 있는 엘리베이터)
-    // 1층에 있는 사용자 A가 오름 버튼을 누른다
+    // 오름버튼을 누른다. (엘레베이터는 5층, 사용자가 1층에서 오름버튼을 누른다)
     @Test
     public void testPushUpBtn() throws Exception {
         Elevator elevator = new Elevator();
@@ -46,6 +42,30 @@ public class TestElevatorOperate {
         FloorOperate floorOperate = new FloorOperate();
         floorOperate.pushUpBtn(elevator, floor);
     }
+
+    // 엘리베이터 문이 열린다.
+    @Test
+    public void testOpenDoor() throws Exception {
+        ElevatorOperate elevatorOperate = new ElevatorOperate();
+        elevatorOperate.openDoor();
+    }
+
+    // 엘리베이터 문이 열린상태로 대기중이다.
+    @Test
+    public void testWaitDoor() throws Exception {
+        ElevatorOperate elevatorOperate = new ElevatorOperate();
+        elevatorOperate.waitDoor();
+    }
+
+    // 엘리베이터 문이 닫힌다.
+    @Test
+    public void testCloseDoor() throws Exception {
+        ElevatorOperate elevatorOperate = new ElevatorOperate();
+        elevatorOperate.closeDoor();
+    }
+
+    // (5층에 있는 엘리베이터)
+    // 1층에 있는 사용자 A가 오름 버튼을 누른다
     // 1층으로 내려온 엘리베이터의 문이 열린다.
     // 사용자 A가 5층을 누른다.
     // 엘리베이터 문이 닫힌다.

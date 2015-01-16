@@ -5,9 +5,9 @@ package main;
  */
 
 public class ElevatorThread extends Thread {
-    public void run(){
+    public void run(long sleepTime){
         try{
-            Thread.sleep(1000);
+            Thread.sleep(sleepTime);
         } catch (Exception e) {
             e.printStackTrace();
         }
